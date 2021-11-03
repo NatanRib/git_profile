@@ -1,19 +1,29 @@
 import 'package:flutter_test/flutter_test.dart';
+
+import 'package:git_profile/data/http/http_client.dart';
+import 'package:git_profile/data/usecases/user_profile_search.dart';
 import 'package:git_profile/domain/entities/user_profile.dart';
 import 'package:git_profile/domain/usecases/user_profile_search.dart';
-import 'package:mockito/mockito.dart';
+
+import 'package:mocktail/mocktail.dart';
+
+class HttpClientSpy extends Mock implements HttpClient{}
 
 void main() {
   
-  test("Should Call get profile method of httpClient from search profile usecase", (){
+  test("Should Call get profile method of httpClient from search profile usecase", () async{
     //arrange
-    when(httpClient.getProfile(any())).thenReturn(UserProfile());
-    
+    String nameOfProfileTest = "natanRib"; 
+    Map<String,dynamic> returnOfApi = {"teste" : "teste"};
+    HttpClient httpClient = HttpClientSpy();
+    UserProfileSearch systemUnderTest = UserProfileSearchImpl();
+    when(() => httpClient.getUserProfile(nameOfProfileTest)).thenAnswer((_) async => returnOfApi);
+
     //act
-    UserProfileSearch systemUnderTest = UserProfileSearch();
-    UserProfile userProfileTest = systemUnderTest(name: "natanRib"); 
+    
+    UserProfile userProfileTest = await systemUnderTest(name: "natanRib"); 
     
     //assert
-    expect(actual, matcher)
+    verify(() => httpClient.getUserProfile(nameOfProfileTest)).called(1);
   });
 }
