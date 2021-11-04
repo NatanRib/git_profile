@@ -6,7 +6,7 @@ class UserProfile{
   String company;
   String reposUrl;
   String location;
-  String email;
+  String? email;
   String twitter;
   int followers;
   int following;
