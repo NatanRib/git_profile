@@ -7,7 +7,7 @@ class UserProfile{
   String reposUrl;
   String location;
   String? email;
-  String twitter;
+  String? twitter;
   int followers;
   int following;
 
