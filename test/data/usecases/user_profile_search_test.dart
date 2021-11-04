@@ -26,4 +26,19 @@ void main() {
     //assert
     verify(() => httpClient.getUserProfile(nameOfProfileTest)).called(1);
   });
+
+   test("Should throw User not found exception when user not found", () async{
+    //arrange
+    String nameOfProfileTest = "natanRib"; 
+    HttpClient httpClient = HttpClientSpy();
+    UserProfileSearch systemUnderTest = UserProfileSearchImpl(httpClient: httpClient);
+    when(() => httpClient.getUserProfile(nameOfProfileTest)).thenAnswer((_) async => userNotFoundAPIReturn);
+
+    //act
+    
+    UserProfile userProfileTest = await systemUnderTest(name: "natanRib");  
+    
+    //assert
+    verify(() => httpClient.getUserProfile(nameOfProfileTest)).called(1);
+  });
 }
