@@ -21,7 +21,7 @@ void main() {
 
     //act
     
-    UserProfile userProfileTest = await systemUnderTest(name: "natanRib"); 
+    UserProfile userProfileTest = await systemUnderTest(name: "natanRib");  
     
     //assert
     verify(() => httpClient.getUserProfile(nameOfProfileTest)).called(1);
