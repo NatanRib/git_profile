@@ -12,7 +12,8 @@ class UserProfileSearchImpl implements UserProfileSearch{
   @override
   Future<UserProfile> call({required String name}) async {
     Map<String,dynamic> result = await httpClient.getUserProfile(name);
-    if (result.isEmpty){
+    print(result);
+    if (result['message'] == 'Not Found'){
       throw UserNotFoundException();
     }
     return UserProfileModel.fromJson(result);
