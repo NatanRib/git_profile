@@ -11,6 +11,6 @@ void main() {
     String userNameNotFounded = 'asd7bastcn';
 
     //assert
-    expect(httpClient.getUserProfile(userNameNotFounded), throwsA(UserNotFoundException));
+    expect(httpClient.getUserProfile(userNameNotFounded), throwsA(isA<UserNotFoundException>()));
   });
 }

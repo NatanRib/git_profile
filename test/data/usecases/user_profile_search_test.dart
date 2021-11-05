@@ -3,7 +3,7 @@ import 'package:git_profile/data/exceptions/user_not_foud_exception.dart';
 import 'package:git_profile/data/http/http_client.dart';
 import 'package:git_profile/data/usecases/user_profile_search_implementation.dart';
 import 'package:git_profile/domain/usecases/user_profile_search.dart';
-import 'package:git_profile/utils/api.dart';
+import 'package:git_profile/utils/test_objects.dart';
 
 import 'package:mocktail/mocktail.dart';
 
