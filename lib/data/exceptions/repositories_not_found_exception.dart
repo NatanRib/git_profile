@@ -1,0 +1,2 @@
+class RepositoriesNotFoundException implements Exception{
+}

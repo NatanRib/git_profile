@@ -37,6 +37,7 @@ class HttpClientImpl implements HttpClient{
       print(result);
     }catch(e){
       print(e);
+      throw HttpClientException();
     }
     return result; 
   }

@@ -41,16 +41,4 @@ void main() {
     //assert
     expect(userRepositoriesJson, isA<List<Map<String,dynamic>>>());
   });
-
-  test("Should throw ReporitoriesNotFoundException when the user was not founded", () async {
-    //arrange
-    HttpClient httpClient = HttpClientImpl();
-    UserProfile userFounded = UserProfileModel.fromJson(correctAPIReturn);
-
-    //act
-    List<Map<String,dynamic>> userRepositoriesJson = await httpClient.getRepositoriesFromUser(userFounded);
-  
-    //assert
-    expect(userRepositoriesJson, throwsA(isA<UserNotFoundException>()));
-  });
 }
