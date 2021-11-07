@@ -15,9 +15,11 @@ import '../../utils/test_objects.dart';
 class HttpClientSpy extends Mock implements HttpClient {}
 
 void main() {
+
   late HttpClient httpClient;
   late RepositoriesListing systemUnderTest;
   late UserProfile userTest;
+  
   setUp(() {
     httpClient = HttpClientSpy();
     systemUnderTest = RepositoriesListingImpl(httpClient: httpClient);
@@ -35,20 +37,26 @@ void main() {
   });
 
   test("Should call getRepositories method from httpClient", () {
+    //arrange
     when(() => httpClient.getRepositoriesFromUser(userTest))
         .thenAnswer((_) async => listOfJsonRepositoriesTest);
 
-    systemUnderTest.getOrderedRepositories(userTest);
+    //act
+    systemUnderTest(userTest);
 
+    //assert
     verify(() => httpClient.getRepositoriesFromUser(userTest)).called(1);
   });
 
   test("Should return a List of repositories from RepositoriesListing", ()async {
+    //arrange
     when(() => httpClient.getRepositoriesFromUser(userTest))
         .thenAnswer((_) async => listOfJsonRepositoriesTest);
 
-    final test = await systemUnderTest.getOrderedRepositories(userTest);
+    //act
+    final test = await systemUnderTest(userTest);
 
+    //assert
     expect(test, isA<List<RepositoryModel>>());
   });
 }

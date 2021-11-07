@@ -10,7 +10,7 @@ class RepositoriesListingImpl implements RepositoriesListing {
   RepositoriesListingImpl({required this.httpClient});
 
   @override
-  Future<List<Repository>> getOrderedRepositories(UserProfile user) async {
+  Future<List<Repository>> call(UserProfile user) async {
     List<RepositoryModel> list = [];
     httpClient
         .getRepositoriesFromUser(user)
