@@ -38,7 +38,7 @@ const userNotFoundAPIReturn = {
   "documentation_url": "https://docs.github.com/rest/reference/users#get-a-user"
 };
 
-const listOfRepositoriesTest = [
+const listOfJsonRepositoriesTest = [
   {
     "id": 375463286,
     "node_id": "MDEwOlJlcG9zaXRvcnkzNzU0NjMyODY=",
