@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+
 import 'package:git_profile/ui/widgets/custom_header.dart';
 import 'package:git_profile/ui/widgets/custom_info_card.dart';
 

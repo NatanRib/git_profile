@@ -3,7 +3,8 @@ import 'package:git_profile/data/exceptions/user_not_foud_exception.dart';
 import 'package:git_profile/data/http/http_client.dart';
 
 import 'package:dio/dio.dart';
-import 'package:git_profile/utils/api.dart';
+import 'package:git_profile/domain/entities/user_profile.dart';
+import 'package:git_profile/utils/api_urls.dart';
 
 class HttpClientImpl implements HttpClient{
   
@@ -22,6 +23,12 @@ class HttpClientImpl implements HttpClient{
       throw UserNotFoundException();
     }
     return result;
+  }
+
+  @override
+  Future<List<Map<String, dynamic>>> getRepositoriesFromUser(UserProfile user) {
+    // TODO: implement getRepositoriesFromUser
+    throw UnimplementedError();
   }
   
 }
