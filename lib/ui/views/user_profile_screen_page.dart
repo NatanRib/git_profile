@@ -4,8 +4,8 @@ import 'package:flutter/rendering.dart';
 import 'package:git_profile/ui/widgets/custom_header.dart';
 import 'package:git_profile/ui/widgets/custom_info_card.dart';
 
-class UserProfileScreen extends StatelessWidget {
-  const UserProfileScreen({Key? key}) : super(key: key);
+class UserProfilePage extends StatelessWidget {
+  const UserProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

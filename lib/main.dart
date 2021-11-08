@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:git_profile/ui/views/user_profile_screen.dart';
+import 'package:git_profile/ui/views/user_profile_search_page.dart';
 
 void main() {
   runApp(
     MaterialApp(
+      showSemanticsDebugger: false,
       theme: ThemeData(
         primaryColor: Colors.grey[700],
         textTheme: const TextTheme(
@@ -27,9 +28,10 @@ void main() {
             color: Colors.white,
             fontWeight: FontWeight.normal
           )
-        )
+        ),
+        backgroundColor: const Color(0xffffffff)
       ),
-      home: const UserProfileScreen()),
+      home: const UserProfileSearchPage()),
     );
 }
 
