@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 
-import 'package:git_profile/ui/widgets/custom_texte_widget.dart';
+import 'package:git_profile/ui/widgets/custom_text_widget.dart';
 
 class CustomHeader extends StatelessWidget {
   final double height;
   final double width;
   final String nameText;
   final String bioText;
+  final String imageUrl;
 
   const CustomHeader(
       {Key? key,
       required this.height,
       required this.width,
       required this.nameText,
-      required this.bioText})
+      required this.bioText,
+      required this.imageUrl})
       : super(key: key);
 
   @override
@@ -41,8 +43,11 @@ class CustomHeader extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: Container(
-                padding: EdgeInsets.only(top: height * 0.4),
+              child: SizedBox(
+                child: CircleAvatar(
+                  radius: 85,
+                  backgroundImage: NetworkImage(imageUrl, scale: 3),
+                )
               ),
               flex: 4,
             ),

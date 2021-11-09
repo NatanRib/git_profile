@@ -3,7 +3,7 @@ class Repository {
   final String description;
   final DateTime created;
   final DateTime updated;
-  final String langague;
+  final String? langague;
   final int whatcherCount;
   final int stargazersCount;
   
@@ -12,7 +12,7 @@ class Repository {
     required this.description,
     required this.created,
     required this.updated,
-    required this.langague,
+    this.langague,
     required this.whatcherCount,
     required this.stargazersCount,
   });

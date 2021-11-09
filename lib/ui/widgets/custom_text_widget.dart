@@ -12,12 +12,13 @@ class CustomTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Text(
-      header && text.length > 30 ?
-        text.substring(0, 30)+'...':
-      header && text.length < 30 ?
-        text:
-      !header && text.length > 45 ?
+      
+      header && text.length > 45 ?
         text.substring(0, 45)+'...':
+      header && text.length < 45 ?
+        text:
+      !header && text.length > 50 ?
+        text.substring(0, 50)+'...':
         text,
       textDirection: TextDirection.ltr,
       style: header && !colorWhite ?

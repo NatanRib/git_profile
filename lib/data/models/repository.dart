@@ -6,7 +6,7 @@ class RepositoryModel extends Repository {
       required description,
       required created,
       required updated,
-      required langague,
+      langague,
       required whatcherCount,
       required stargazersCount})
       : super(

@@ -10,12 +10,13 @@ class RepositoriesListingImpl implements RepositoriesListing {
   RepositoriesListingImpl({required this.httpClient});
 
   @override
-  Future<List<Repository>> call(UserProfile user) async {
+  Future<List<Repository>> call({required UserProfile user}) async {
     List<RepositoryModel> list = [];
     httpClient
         .getRepositoriesFromUser(user)
         .then((value) => value.forEach((element) {
               list.add(RepositoryModel.fromJson(element));
+              print("lista: " + list.toString());
             }));
     list.sort((a,b)=> a.stargazersCount.compareTo(b.stargazersCount));
     return list;

@@ -29,6 +29,7 @@ void main() {
         bio: "teste",
         company: "teste",
         reposUrl: "teste",
+        imageUrl: 'teste',
         location: "teste",
         email: "teste",
         twitter: "teste",
@@ -42,7 +43,7 @@ void main() {
         .thenAnswer((_) async => listOfJsonRepositoriesTest);
 
     //act
-    systemUnderTest(userTest);
+    systemUnderTest(user: userTest);
 
     //assert
     verify(() => httpClient.getRepositoriesFromUser(userTest)).called(1);
@@ -54,7 +55,7 @@ void main() {
         .thenAnswer((_) async => listOfJsonRepositoriesTest);
 
     //act
-    final test = await systemUnderTest(userTest);
+    final test = await systemUnderTest(user: userTest);
 
     //assert
     expect(test, isA<List<RepositoryModel>>());

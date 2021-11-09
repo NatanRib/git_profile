@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:git_profile/ui/widgets/custom_texte_widget.dart';
+import 'package:git_profile/ui/widgets/custom_text_widget.dart';
 
 class CustomInfoCard extends StatelessWidget {
   final double height;

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:git_profile/ui/views/user_profile_search_page.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-      showSemanticsDebugger: false,
+    GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.grey[700],
         textTheme: const TextTheme(
@@ -24,7 +25,7 @@ void main() {
             fontWeight: FontWeight.normal
           ),
           bodyText2: TextStyle(
-            fontSize: 16,
+            fontSize: 14,
             color: Colors.white,
             fontWeight: FontWeight.normal
           )
